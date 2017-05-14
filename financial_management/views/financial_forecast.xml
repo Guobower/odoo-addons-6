@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <odoo>
 
-    <record model="ir.ui.view" id="view_financial_forecast_form">
+    <record id="view_financial_forecast_form" model="ir.ui.view" >
         <field name="name">Financial Forecast Form View</field>
         <field name="model">financial.forecast</field>
         <field name="type">form</field>
@@ -116,7 +116,7 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="view_financial_forecast_tree">
+    <record id="view_financial_forecast_tree" model="ir.ui.view" >
         <field name="name">view_financial_forecast_tree</field>
         <field name="model">financial.forecast</field>
         <field name="type">tree</field>

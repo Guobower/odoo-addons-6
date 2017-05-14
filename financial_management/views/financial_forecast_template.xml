@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <odoo>
 
-    <record model="ir.ui.view" id="view_financial_forecast_template_form">
+    <record id="view_financial_forecast_template_form" model="ir.ui.view">
         <field name="name">Financial Forecast Template Form View</field>
         <field name="model">financial.forecast.template</field>
         <field name="type">form</field>
@@ -26,7 +26,7 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="view_financial_forecast_recurring_costs_tree">
+    <record id="view_financial_forecast_recurring_costs_tree" model="ir.ui.view">
         <field name="name">view_financial_forecast_recurring_costs_tree</field>
         <field name="model">financial.forecast.line.template</field>
         <field name="type">tree</field>

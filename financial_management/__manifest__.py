@@ -22,15 +22,15 @@
     'data': [
         'views/account_account.xml',
         'views/account_bank_statement.xml',
+        'views/account_invoice.xml',
+        'views/account_journal.xml',
         'views/account_move_line.xml',
         'views/finance_menu.xml',
         'views/financial_forecast.xml',
         'views/financial_forecast_template.xml',
-        'views/invoice.xml',
-        'views/account_journal.xml',
 
-        'security/ir.model.access.csv',
         'security/access_rules.xml',
+        'security/ir.model.access.csv',
      ],
     'installable': True,
     'auto_install': False,
