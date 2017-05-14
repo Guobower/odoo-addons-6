@@ -1,0 +1,412 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* financial_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-14 14:50+0000\n"
+"PO-Revision-Date: 2017-05-14 16:59+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: it\n"
+"X-Generator: Poedit 1.7.5\n"
+
+#. module: financial_management
+#: code:addons/financial_management/models/account_bank_statement.py:43
+#: code:addons/financial_management/models/account_invoice.py:30
+#: code:addons/financial_management/models/account_move_line.py:40
+#, python-format
+msgid "A Financial Forecast for this date has                     not been found or is closed. Please create one."
+msgstr "Un Forecast Finanziario per questo periodo                     non esiste o è chiuso. Si prega di crearne uno."
+
+#. module: financial_management
+#: model:ir.model,name:financial_management.model_account_account
+msgid "Account"
+msgstr "Conto"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_active
+msgid "Active"
+msgstr "Attivo"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_line_template_amount
+msgid "Amount"
+msgstr "Importo"
+
+#. module: financial_management
+#: model:ir.model,name:financial_management.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr "Riga Estratto Conto Bancario"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_template_bank_statement_id
+msgid "Bank statement"
+msgstr "Estratto conto"
+
+#. module: financial_management
+#: selection:financial.forecast,state:0
+msgid "Closed"
+msgstr "Chiuso"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_company_id
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_template_company_id
+msgid "Company"
+msgstr "Azienda"
+
+#. module: financial_management
+#: model:ir.ui.view,arch_db:financial_management.view_financial_forecast_form
+msgid "Compute forecast lines"
+msgstr "Calcola righe del Forecast"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_recurrent_cost_ids
+msgid "Cost/reveues"
+msgstr "Costi/ricavi"
+
+#. module: financial_management
+#: model:ir.ui.view,arch_db:financial_management.view_financial_forecast_form
+msgid "Costs/revenues"
+msgstr "Costi/ricavi"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_create_uid
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_line_template_create_uid
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_template_create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_create_date
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_line_template_create_date
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_template_create_date
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_line_template_day
+msgid "Day"
+msgstr "Giorno"
+
+#. module: financial_management
+#: model:ir.ui.view,arch_db:financial_management.view_financial_forecast_form
+msgid "Delta"
+msgstr "Differenza"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_display_name
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_line_template_display_name
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_template_display_name
+msgid "Display Name"
+msgstr "Nome Visualizzato"
+
+#. module: financial_management
+#: model:ir.ui.view,arch_db:financial_management.view_financial_forecast_form
+msgid "Do you really want to compute the forecast lines?"
+msgstr "Sei sicuro di voler calcolare le righe del Forecast?"
+
+#. module: financial_management
+#: model:ir.ui.view,arch_db:financial_management.view_financial_forecast_form
+msgid "Do you really want to update this forecast data?"
+msgstr "Sei sicuro di voler aggiornare i dati di questo Forecast?"
+
+#. module: financial_management
+#: code:addons/financial_management/models/financial_forecast_template.py:50
+#, python-format
+msgid "Each line's amount can not be equal to 0"
+msgstr "Il valore delle righe del forecast non può essere uguale a 0"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_date_end
+msgid "End Date"
+msgstr "Data di fine"
+
+#. module: financial_management
+#: model:ir.ui.view,arch_db:financial_management.account_bank_statement_line_financial_planning
+#: model:ir.ui.view,arch_db:financial_management.view_financial_forecast_form
+msgid "FC"
+msgstr "FC"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_final_balance
+msgid "Final balance"
+msgstr "Saldo finale\t"
+
+#. module: financial_management
+#: model:ir.ui.menu,name:financial_management.menu_financial_management
+msgid "Finance"
+msgstr "FInanza"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_account_bank_statement_line_financial_date
+#: model:ir.model.fields,field_description:financial_management.field_account_move_line_financial_date
+msgid "Financial Date"
+msgstr "Data finanziaria"
+
+#. module: financial_management
+#: model:ir.model,name:financial_management.model_financial_forecast
+#: model:ir.model.fields,field_description:financial_management.field_account_bank_statement_line_financial_forecast_id
+#: model:ir.model.fields,field_description:financial_management.field_account_invoice_financial_forecast_id
+#: model:ir.model.fields,field_description:financial_management.field_account_move_line_forecast_id
+msgid "Financial Forecast"
+msgstr "Forecast finanziario\t"
+
+#. module: financial_management
+#: model:ir.actions.act_window,name:financial_management.action_finance_financial_forecasts
+#: model:ir.model.fields,field_description:financial_management.field_account_account_financial_planning
+#: model:ir.model.fields,field_description:financial_management.field_account_journal_financial_planning
+#: model:ir.model.fields,field_description:financial_management.field_account_move_line_financial_planning
+#: model:ir.ui.menu,name:financial_management.menu_financial_forecast_group
+#: model:ir.ui.menu,name:financial_management.menu_financial_forecasts
+msgid "Financial Planning"
+msgstr "Pianificazione finanziaria"
+
+#. module: financial_management
+#: model:ir.model,name:financial_management.model_financial_forecast_template
+msgid "Financial Planning Template"
+msgstr "Template pianificazione finanziaria"
+
+#. module: financial_management
+#: model:ir.ui.view,arch_db:financial_management.view_financial_forecast_template_form
+msgid "Financial Template"
+msgstr "Template finanziario"
+
+#. module: financial_management
+#: model:ir.model.fields,help:financial_management.field_account_invoice_financial_forecast_id
+msgid "Financial forecast in which the invoice is planned to be paid"
+msgstr "Forecast finanziario in cui la fattura è prevista esser pagata"
+
+#. module: financial_management
+#: model:ir.ui.view,arch_db:financial_management.view_financial_forecast_tree
+msgid "Financial planning"
+msgstr "Pianificazione finanziaria"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_forecast_template_id
+msgid "Forecast Template"
+msgstr "Template forecast"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_account_bank_statement_line_from_forecast
+msgid "From forecast"
+msgstr "Dal forecast"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_id
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_line_template_id
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_template_id
+msgid "ID"
+msgstr "ID"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_initial_balance
+msgid "Initial balance"
+msgstr "Saldo iniziale"
+
+#. module: financial_management
+#: model:ir.model,name:financial_management.model_account_invoice
+msgid "Invoice"
+msgstr "Fattura"
+
+#. module: financial_management
+#: model:ir.model,name:financial_management.model_account_journal
+msgid "Journal"
+msgstr "Sezionale"
+
+#. module: financial_management
+#: model:ir.model,name:financial_management.model_account_move_line
+msgid "Journal Item"
+msgstr "Voce sezionale"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_line_template_name
+msgid "Label"
+msgstr "Descrizione"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast___last_update
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_line_template___last_update
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_template___last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_line_template_write_uid
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_template_write_uid
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_write_uid
+msgid "Last Updated by"
+msgstr "Ultima modifica di"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_line_template_write_date
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_template_write_date
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_write_date
+msgid "Last Updated on"
+msgstr "Ultima modifica il"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_name
+msgid "Name"
+msgstr "Nome"
+
+#. module: financial_management
+#: model:ir.ui.view,arch_db:financial_management.account_invoice_customer_search_riba
+msgid "Non RiBa"
+msgstr "Non RiBa"
+
+#. module: financial_management
+#: selection:financial.forecast,state:0
+msgid "Open"
+msgstr "Aperto"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_open_cost_revenues
+msgid "Open other"
+msgstr "Altri flussi aperti"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_open_payables
+msgid "Open payables"
+msgstr "Debiti aperti"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_open_receivables
+msgid "Open receivables"
+msgstr "Crediti aperti"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_cost_revenues
+msgid "Other"
+msgstr "Altri flussi"
+
+#. module: financial_management
+#: model:ir.ui.menu,name:financial_management.menu_finance_management_other
+msgid "Others"
+msgstr "Altri flussi"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_line_template_partner_id
+msgid "Partner"
+msgstr "Partner"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_payable_ids
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_payables
+#: model:ir.ui.view,arch_db:financial_management.view_financial_forecast_form
+msgid "Payables"
+msgstr "Crediti"
+
+#. module: financial_management
+#: model:ir.actions.act_window,name:financial_management.action_list_payables_receivables
+#: model:ir.ui.menu,name:financial_management.menu_list_payables_receivables
+msgid "Payables and Receivables"
+msgstr "Crediti e debiti"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_periodic_saldo
+msgid "Periodic saldo"
+msgstr "Saldo del periodo"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_account_invoice_financial_date
+msgid "Planning date"
+msgstr "Data pianificata"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_previous_forecast_id
+msgid "Previous forecast"
+msgstr "Forecast precedente"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_receivable_ids
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_receivables
+#: model:ir.ui.view,arch_db:financial_management.view_financial_forecast_form
+msgid "Receivables"
+msgstr "Crediti"
+
+#. module: financial_management
+#: model:ir.actions.act_window,name:financial_management.action_finance_financial_forecast_lines
+#: model:ir.model,name:financial_management.model_financial_forecast_line_template
+#: model:ir.ui.menu,name:financial_management.menu_financial_forecast_line
+msgid "Recurring Costs"
+msgstr "Flussi ricorrenti"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_template_recurring_line_ids
+msgid "Recurring Line"
+msgstr "Righe ricorrenti"
+
+#. module: financial_management
+#: model:ir.ui.view,arch_db:financial_management.view_financial_forecast_template_form
+msgid "Recurring costs"
+msgstr "Flussi ricorrenti"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_line_template_ref
+msgid "Reference"
+msgstr "Riferimento"
+
+#. module: financial_management
+#: model:ir.ui.view,arch_db:financial_management.account_invoice_customer_search_riba
+msgid "RiBa"
+msgstr "RiBa"
+
+#. module: financial_management
+#: model:ir.model.fields,help:financial_management.field_financial_forecast_template_bank_statement_id
+msgid "Select the virtual bank statement to be used for financial             planning operations"
+msgstr "Select the virtual bank statement to be used for financial             planning operations"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_date_start
+msgid "Start Date"
+msgstr "Data di inizio"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_state
+msgid "State"
+msgstr "Stato"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_statement_id
+msgid "Statement id"
+msgstr "Statement id"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_template_name
+msgid "Template name"
+msgstr "Nome template"
+
+#. module: financial_management
+#: model:ir.actions.act_window,name:financial_management.action_financial_forecast_template
+#: model:ir.ui.menu,name:financial_management.menu_financial_forecast_template
+msgid "Templates"
+msgstr "Template"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_forecast_line_template_financial_forecast_template_id
+msgid "Treasury Template"
+msgstr "Template tesoreria"
+
+#. module: financial_management
+#: model:ir.ui.view,arch_db:financial_management.view_financial_forecast_form
+msgid "Update balances"
+msgstr "Aggiorna saldi"
+
+#. module: financial_management
+#: model:ir.ui.view,arch_db:financial_management.view_financial_forecast_form
+msgid "Update forecast data"
+msgstr "Aggiorna dati forecast"
+
+#. module: financial_management
+#. openerp-web
+#: code:addons/financial_management/static/src/xml/qweb.xml:8
+#, python-format
+msgid "register"
+msgstr "Registra"

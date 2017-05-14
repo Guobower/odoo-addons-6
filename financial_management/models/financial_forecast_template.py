@@ -38,9 +38,6 @@ class FinancialForecastLineTemplate(models.Model):
     partner_id = fields.Many2one(
         comodel_name="res.partner",
         string="Partner")
-    journal_id = fields.Many2one(
-        comodel_name="account.journal",
-        string="Journal")
     amount = fields.Float(string="Amount")
     financial_forecast_template_id = fields.Many2one(
         "financial.forecast.template",

@@ -11,7 +11,8 @@
                 <group string="Financial Template">
                   <group>
                     <field name="name"/>
-                    <field name="bank_statement_id"/>
+                    <field name="bank_statement_id"
+                           required='True'/>
                     <field name="company_id"/>
                   </group>
                 </group>
@@ -35,7 +36,6 @@
               <field name="ref"/>
               <field name="day"/>
               <field name="partner_id"/>
-              <field name="journal_id"/>
               <field name="amount"/>
               <field name="financial_forecast_template_id"/>
             </tree>

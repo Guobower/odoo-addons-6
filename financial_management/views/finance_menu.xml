@@ -1,62 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- Creating the general menu "FINANCE"  menu -->
     <menuitem name="Finance"
-      string='Finance'
-      id="menu_financial_management"
-      sequence="80"/>
-
-    <!-- Financial Planning Group-->
+        string='Finance'
+        id="menu_financial_management"
+        sequence="80"/>
 
     <menuitem id='menu_financial_forecast_group'
-      name='Financial Planning'
-      parent="menu_financial_management"
-      sequence='11'/>
+        name='Financial Planning'
+        parent="menu_financial_management"
+        sequence='11'/>
 
-      <!-- Financial Planning menu-->
+    <!-- Financial Planning menu-->
     <act_window id="action_finance_financial_forecasts"
-      name="Financial Planning"
-      res_model="financial.forecast"
-      view_mode="tree,form,pivot"/>
+        name="Financial Planning"
+        res_model="financial.forecast"
+        view_mode="tree,form,pivot"/>
 
     <menuitem id='menu_financial_forecasts'
-      string='Financial Planning'
-      parent="menu_financial_forecast_group"
-      action="action_finance_financial_forecasts"
-      sequence='10'/>
+        string='Financial Planning'
+        parent="menu_financial_forecast_group"
+        action="action_finance_financial_forecasts"
+        sequence='10'/>
 
-      <!-- Recurring costs-->
+    <!-- Recurring costs-->
     <act_window id="action_finance_financial_forecast_lines"
-      name="Recurring Costs"
-      res_model="financial.forecast.line.template"
-      view_mode="tree,form"/>
+        name="Recurring Costs"
+        res_model="financial.forecast.line.template"
+        view_mode="tree,form"/>
 
     <menuitem id='menu_financial_forecast_line'
-      string='Recurring Costs'
-      parent="menu_financial_forecast_group"
-      action="action_finance_financial_forecast_lines"
-      sequence='20'/>
+        string='Recurring Costs'
+        parent="menu_financial_forecast_group"
+        action="action_finance_financial_forecast_lines"
+        sequence='20'/>
 
-      <!-- Financial Templates-->
+    <!-- Financial Templates-->
     <act_window id="action_financial_forecast_template"
-      name="Templates"
-      res_model='financial.forecast.template'
-      view_mode="tree,form"/>
+        name="Templates"
+        res_model='financial.forecast.template'
+        view_mode="tree,form"/>
 
     <menuitem id='menu_financial_forecast_template'
-      string='Templates'
-      parent="menu_financial_forecast_group"
-      action="action_financial_forecast_template"
-      sequence='10'/>
+        string='Templates'
+        parent="menu_financial_forecast_group"
+        action="action_financial_forecast_template"
+        sequence='10'/>
 
-      <menuitem id='menu_finance_management_other'
+    <menuitem id='menu_finance_management_other'
         name='Others'
         parent="menu_financial_management"
         sequence='15'/>
 
-      <!-- Payables and Receivables -->
-      <act_window id="action_list_payables_receivables"
+    <!-- Payables and Receivables -->
+    <act_window id="action_list_payables_receivables"
         name="Payables and Receivables"
         res_model="account.move.line"
         domain="[('financial_planning','!=',False),
@@ -65,7 +62,7 @@
         view_id="account.view_move_line_tree"
         view_mode="tree,pivot"/>
 
-      <menuitem id='menu_list_payables_receivables'
+    <menuitem id='menu_list_payables_receivables'
         string="Payables and Receivables"
         parent="menu_finance_management_other"
         action="action_list_payables_receivables"

@@ -32,8 +32,6 @@
         'security/ir.model.access.csv',
         'security/access_rules.xml',
      ],
-    'qweb': [
-     ],
     'installable': True,
     'auto_install': False,
 }

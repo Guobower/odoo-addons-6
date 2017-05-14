@@ -124,7 +124,7 @@ class FinancialForecast(models.Model):
                 open_debit += line.amount_residual
             for line in item.receivable_ids:
                 periodic_credit += line.balance
-                open_debit += line.amount_residual
+                open_credit += line.amount_residual
             for line in item.recurrent_cost_ids:
                 others += line.amount
                 open_cost_revenues += line.amount if line.from_forecast else 0
@@ -148,7 +148,8 @@ class FinancialForecast(models.Model):
                 ('account_id.financial_planning', '=', True),
                 ('date_maturity', '>=', item.date_start),
                 ('date_maturity', '<=', item.date_end),
-                ('financial_date', '=', False),
+                # ('financial_date', '=', False),
+                item.compute_periodic_saldo()
             ])
             for move in move_list:
                 move.financial_date = move.date_maturity
@@ -157,7 +158,7 @@ class FinancialForecast(models.Model):
             bank_line_list = bank_line_obj.search([
                 ('date', '>=', item.date_start),
                 ('date', '<=', item.date_end),
-                ('financial_date', '=', False),
+                # ('financial_date', '=', False),
             ])
             for line in bank_line_list:
                 line.financial_date = line.date
