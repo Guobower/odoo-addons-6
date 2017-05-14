@@ -4,13 +4,22 @@ Financial Planning
 
 This module introduces financial planning functionalities to Odoo.
 
+Financial management is based on account moves and on bank statement lines
+(for forecasting other costs and revenues not yet invoiced or not invoiceable).
+
+
 Configuration
 =============
 
 To configure this module, you need to:
 
-#. create a template and add fixed cost lines             ok
-# - select the bank statement for financial planning       ok
+#. selects accounts for financial planning
+
+This module forecasting is based on account moves, which are in turn related to
+accounts. At the menu
+
+#. create a template and add fixed cost lines
+# - select the bank statement for financial planning
 
 #. manage financial planning date in different objects:
  - account.invoice >> date_financial_planning

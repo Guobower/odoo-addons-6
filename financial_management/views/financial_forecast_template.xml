@@ -12,6 +12,7 @@
                   <group>
                     <field name="name"/>
                     <field name="bank_statement_id"/>
+                    <field name="company_id"/>
                   </group>
                 </group>
                 <notebook>

@@ -46,10 +46,18 @@ class FinancialForecast(models.Model):
         string='Periodic saldo', compute='compute_periodic_saldo', store=True)
     payables = fields.Float(
         string='Payables', compute='compute_periodic_saldo', store=True)
+    open_payables = fields.Float(
+        string='Open payables',
+        compute='compute_periodic_saldo', store=True)
     receivables = fields.Float(
         string='Receivables', compute='compute_periodic_saldo', store=True)
+    open_receivables = fields.Float(
+        string='Open receivables',
+        compute='compute_periodic_saldo', store=True)
     cost_revenues = fields.Float(
-        string='Costs/revenues', compute='compute_periodic_saldo', store=True)
+        string='Other', compute='compute_periodic_saldo', store=True)
+    open_cost_revenues = fields.Float(
+        string='Open other', compute='compute_periodic_saldo', store=True)
 
     # Payables and receivables
     receivable_ids = fields.One2many(
@@ -107,19 +115,28 @@ class FinancialForecast(models.Model):
         for item in self:
             periodic_debit = 0
             periodic_credit = 0
+            open_debit = 0
+            open_credit = 0
+            open_cost_revenues = 0
             others = 0
             for line in item.payable_ids:
                 periodic_debit += line.balance
+                open_debit += line.amount_residual
             for line in item.receivable_ids:
                 periodic_credit += line.balance
+                open_debit += line.amount_residual
             for line in item.recurrent_cost_ids:
                 others += line.amount
+                open_cost_revenues += line.amount if line.from_forecast else 0
 
             periodic_saldo = periodic_debit + periodic_credit + others
             item.periodic_saldo = periodic_saldo
             item.payables = periodic_debit
+            item.open_payables = open_debit
             item.receivables = periodic_credit
+            item.open_receivables = open_credit
             item.cost_revenues = others
+            item.open_cost_revenues = open_cost_revenues
             item.final_balance = item.initial_balance + periodic_saldo
 
     @api.multi

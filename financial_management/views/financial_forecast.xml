@@ -41,9 +41,18 @@
                   </group>
                 </group>
                 <group string="Delta" col="6">
-                  <field name="receivables" colspan="2"/>
-                  <field name="payables" colspan="2"/>
-                  <field name="cost_revenues" colspan="2"/>
+                  <group colspan="2">
+                    <field name="receivables"/>
+                    <field name="open_receivables"/>
+                  </group>
+                  <group colspan="2">
+                    <field name="payables"/>
+                    <field name="open_payables"/>
+                  </group>
+                  <group colspan="2">
+                    <field name="cost_revenues"/>
+                    <field name="open_cost_revenues"/>
+                  </group>
                 </group>
                 <notebook>
                     <page name='receivable' string="Receivables">
