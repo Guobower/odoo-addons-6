@@ -149,8 +149,7 @@ class FinancialForecast(models.Model):
                 ('date_maturity', '>=', item.date_start),
                 ('date_maturity', '<=', item.date_end),
                 # ('financial_date', '=', False),
-                item.compute_periodic_saldo()
-            ])
+                ])
             for move in move_list:
                 move.financial_date = move.date_maturity
 
@@ -162,6 +161,7 @@ class FinancialForecast(models.Model):
             ])
             for line in bank_line_list:
                 line.financial_date = line.date
+            item.compute_periodic_saldo()
 
     @api.multi
     def update_forecast_balances(self):
