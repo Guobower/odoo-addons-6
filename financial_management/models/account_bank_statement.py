@@ -39,6 +39,3 @@ class AccountBankStatementLine(models.Model):
                     ('state', '=', 'open')])
                 if forecast_id:
                     item.financial_forecast_id = forecast_id[0]
-                else:
-                    raise Warning(_("A Financial Forecast for this date has \
-                    not been found or is closed. Please create one."))

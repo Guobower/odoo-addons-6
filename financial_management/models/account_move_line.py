@@ -36,7 +36,5 @@ class AccountMoveLine(models.Model):
                     ('date_start', '<=', item.financial_date),
                     ('date_end', '>=', item.financial_date),
                     ('state', '=', 'open')])
-                if not forecast_id:
-                    raise Warning(_("A Financial Forecast for this date has \
-                    not been found or is closed. Please create one."))
-                item.forecast_id = forecast_id[0].id
+                if forecast_id:
+                    item.forecast_id = forecast_id[0].id
