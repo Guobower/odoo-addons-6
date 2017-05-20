@@ -54,6 +54,7 @@ Open Points
 - Link the virtual bank not to template but on each forecast ?
 - take recurrent costs from previous month
 - compute bank balance and print on note field (e.g)
+- financial planning boolean on account shall be company-dependent
 
 
 
