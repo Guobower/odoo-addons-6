@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+      <report id="report_sale_order_open_amounts2"
+              string="SO Open amounts"
+              model="sale.order"
+              report_type="qweb-pdf"
+              name="sale_order_due_amount.sale_order_open_amounts"
+              file="sale_order_due_amount.sale_order_open_amounts"
+            />
+
+        <template id="report_sale_order_open_amounts_header">
+            <div>
+            </div>
+        </template>
+
+        <template id="sale_order_open_amounts">
+          <t t-call="report.html_container">
+            <t t-call="report.external_layout">
+              <div class="page">
+                <div class="row">
+                    <!-- SALE ORDER TABLE -->
+                     <table class="table table-bordered">
+                        <tr>
+                            <th>Order</th>
+                            <th>Due amounts</th>
+                        </tr>
+                        <t t-foreach="docs" t-as="o" t-if="o.order_amount_to_pay > 0">
+                            <tr>
+                                <td>
+                                    <span t-field="o.name"/>
+                                </td>
+                                <td>
+                                    <table class="table">
+                                        <t t-foreach="o.invoice_ids" t-as="inv" t-if="inv.residual_signed > 0">
+                                            <tr>
+                                                 <th>Invoice</th>
+                                                 <th>Description</th>
+                                                 <th>Due date</th>
+                                                 <th>Due amount</th>
+                                             </tr>
+                                             <t t-foreach="inv.move_id.line_ids" t-as="line" t-if="line.amount_residual > 0">
+                                                 <tr>
+                                                     <td>
+                                                         <span t-field="line.invoice_id.number"/>
+                                                     </td>
+                                                     <td>
+                                                         <span t-field="line.name"/>
+                                                     </td>
+                                                     <td>
+                                                         <span t-field="line.date_maturity"/>
+                                                     </td>
+                                                     <td>
+                                                         <span t-field="line.amount_residual"/>
+                                                     </td>
+                                                 </tr>
+                                             </t>
+                                         </t>
+                                    </table>
+                                </td>
+                            </tr>
+                        </t>
+                    </table>
+                </div>
+              </div>
+            </t>
+          </t>
+        </template>
+
+        <template id="report_sale_order_open_amounts_footer">
+            <div>
+            </div>
+        </template>
+
+
+
+
+    </data>
+</openerp>

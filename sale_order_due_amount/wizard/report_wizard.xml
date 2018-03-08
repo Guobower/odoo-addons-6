@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+  <data>
+    <!-- creating Menu Item and action -->
+
+    <record id="action_sale_order_open_amounts_wizard" model="ir.actions.act_window">
+        <field name="name">SO open amounts</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">report.sale_order_open_amounts</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id='menu_sale_order_open_amounts_report'
+        string='Sale order report'
+        parent="sales_team.menu_sale_report"
+        action="action_sale_order_open_amounts_wizard"
+        sequence="20"/>
+
+    <!-- creating wizard window-->
+
+    <record id="view_sale_order_open_amounts_wizard" model="ir.ui.view">
+      <field name="name">view.sale.order.open.amounts.wizard</field>
+      <field name="model">report.sale_order_open_amounts</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+            <p>Inserire data iniziale e finale per
+              delimitare l'estrazione dei dati. </p>
+          </header>
+          <sheet string="SO open amounts report">
+            <group name="group_top">
+              <group name="group_left">
+                <field name="initial_date"/>
+                <field name="final_date"/>
+              </group>
+            </group>
+          </sheet>
+          <footer>
+            <button type="object"
+                    name="print_report"
+                    string="Print"
+                    class="oe_highlight"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+
+  </data>
+</odoo>
