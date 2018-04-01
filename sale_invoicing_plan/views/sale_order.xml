@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+    <record model="ir.ui.view" id="sale_order_form_plan_view">
+        <field name="name">sale.order.form.plan</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='sale_pay']" position="inside">
+            	<field name="invoicing_plan_id"/>
+            </xpath>
+        </field>
+    </record>
+
+
+
+
+</data>
+</openerp>

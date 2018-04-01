@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+    <record model="ir.ui.view" id="sale_invoicing_plan_form_view">
+        <field name="name">sale.invoicing.plan.form (in sale_invoicing_plan)</field>
+        <field name="model">sale.invoicing.plan</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <!-- TODO -->
+                </header>
+                <sheet>
+                    <!-- TODO -->
+                    <group>
+                        <field name="name"/>
+                        <field name="line_ids">
+                            <tree string="Plan Lines" editable="bottom">
+                                <field name="amount_type"/>
+                                <field name="product_id"/>
+                                <field name="amount"/>
+                                <field name="days"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+                <div class="oe_chatter"></div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="sale_invoicing_plan_search_view">
+        <field name="name">sale.invoicing.plan.search (in sale_invoicing_plan)</field>
+        <field name="model">sale.invoicing.plan</field>
+        <field name="arch" type="xml">
+            <search>
+                <!-- TODO -->
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="sale_invoicing_plan_tree_view">
+        <field name="name">sale.invoicing.plan.tree (in sale_invoicing_plan)</field>
+        <field name="model">sale.invoicing.plan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- TODO -->
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="sale_invoicing_plan_act_window">
+        <field name="name">Invoicing Plans</field> <!-- TODO -->
+        <field name="res_model">sale.invoicing.plan</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record model="ir.ui.menu" id="sale_invoicing_plan_menu">
+        <field name="name">Invoicing Plans</field>
+        <field name="parent_id" ref="account.account_management_menu"/> <!-- TODO -->
+        <field name="action" ref="sale_invoicing_plan_act_window"/>
+        <field name="sequence" eval="16"/> <!-- TODO -->
+    </record>
+
+
+</data>
+</openerp>

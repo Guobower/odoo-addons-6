@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+    <record model="ir.model.access" id="sale_invoicing_plan_access"> <!-- TODO acl id -->
+        <field name="name">sale.invoicing.plan access</field> <!-- TODO acl name -->
+        <field name="model_id" ref="model_sale_invoicing_plan"/>
+        <!-- TODO review and adapt -->
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+    <record model="ir.model.access" id="sale_invoicing_plan_line_access"> <!-- TODO acl id -->
+        <field name="name">sale.invoicing.plan.line access</field> <!-- TODO acl name -->
+        <field name="model_id" ref="model_sale_invoicing_plan_line"/>
+        <!-- TODO review and adapt -->
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+</data>
+</openerp>

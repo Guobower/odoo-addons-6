@@ -1,0 +1,127 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * sale_invoicing_plan
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-05 12:56+0000\n"
+"PO-Revision-Date: 2017-06-05 12:56+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_invoicing_plan
+#: model:ir.model.fields,field_description:sale_invoicing_plan.field_sale_invoicing_plan_line_amount
+msgid "Amount"
+msgstr "Importo"
+
+#. module: sale_invoicing_plan
+#: model:ir.model.fields,field_description:sale_invoicing_plan.field_sale_invoicing_plan_create_uid
+#: model:ir.model.fields,field_description:sale_invoicing_plan.field_sale_invoicing_plan_line_create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: sale_invoicing_plan
+#: model:ir.model.fields,field_description:sale_invoicing_plan.field_sale_invoicing_plan_create_date
+#: model:ir.model.fields,field_description:sale_invoicing_plan.field_sale_invoicing_plan_line_create_date
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: sale_invoicing_plan
+#: model:ir.model.fields,field_description:sale_invoicing_plan.field_sale_invoicing_plan_display_name
+#: model:ir.model.fields,field_description:sale_invoicing_plan.field_sale_invoicing_plan_line_display_name
+msgid "Display Name"
+msgstr "Nome Visualizzato"
+
+#. module: sale_invoicing_plan
+#: selection:sale.invoicing.plan.line,amount_type:0
+msgid "Fixed Amount"
+msgstr "Importo Fisso"
+
+#. module: sale_invoicing_plan
+#: model:ir.model.fields,field_description:sale_invoicing_plan.field_sale_invoicing_plan_id
+#: model:ir.model.fields,field_description:sale_invoicing_plan.field_sale_invoicing_plan_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: sale_invoicing_plan
+#: model:ir.model,name:sale_invoicing_plan.model_sale_invoicing_plan
+#: model:ir.model.fields,field_description:sale_invoicing_plan.field_sale_invoicing_plan_line_plan_id
+#: model:ir.model.fields,field_description:sale_invoicing_plan.field_sale_order_invoicing_plan_id
+msgid "Invoicing Plan"
+msgstr "Piano di Fatturazione"
+
+#. module: sale_invoicing_plan
+#: model:ir.model,name:sale_invoicing_plan.model_sale_invoicing_plan_line
+msgid "Invoicing Plan Line"
+msgstr "Riga del piano di fatturazione"
+
+#. module: sale_invoicing_plan
+#: model:ir.actions.act_window,name:sale_invoicing_plan.sale_invoicing_plan_act_window
+#: model:ir.ui.menu,name:sale_invoicing_plan.sale_invoicing_plan_menu
+msgid "Invoicing Plans"
+msgstr "Piani di Fatturazione"
+
+#. module: sale_invoicing_plan
+#: model:ir.model.fields,field_description:sale_invoicing_plan.field_sale_invoicing_plan___last_update
+#: model:ir.model.fields,field_description:sale_invoicing_plan.field_sale_invoicing_plan_line___last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: sale_invoicing_plan
+#: model:ir.model.fields,field_description:sale_invoicing_plan.field_sale_invoicing_plan_line_write_uid
+#: model:ir.model.fields,field_description:sale_invoicing_plan.field_sale_invoicing_plan_write_uid
+msgid "Last Updated by"
+msgstr "Ultima modifica di"
+
+#. module: sale_invoicing_plan
+#: model:ir.model.fields,field_description:sale_invoicing_plan.field_sale_invoicing_plan_line_write_date
+#: model:ir.model.fields,field_description:sale_invoicing_plan.field_sale_invoicing_plan_write_date
+msgid "Last Updated on"
+msgstr "Ultima modifica il"
+
+#. module: sale_invoicing_plan
+#: model:ir.model.fields,field_description:sale_invoicing_plan.field_sale_invoicing_plan_name
+msgid "Name"
+msgstr "Nome"
+
+#. module: sale_invoicing_plan
+#: model:ir.model.fields,field_description:sale_invoicing_plan.field_sale_invoicing_plan_line_days
+msgid "Number of Days"
+msgstr "Numero di Giorni"
+
+#. module: sale_invoicing_plan
+#: selection:sale.invoicing.plan.line,amount_type:0
+msgid "Percentage"
+msgstr "Percentuale"
+
+#. module: sale_invoicing_plan
+#: model:ir.model.fields,field_description:sale_invoicing_plan.field_sale_invoicing_plan_line_ids
+#: model:ir.ui.view,arch_db:sale_invoicing_plan.sale_invoicing_plan_form_view
+msgid "Plan Lines"
+msgstr "Righe piano di fatturazione"
+
+#. module: sale_invoicing_plan
+#: model:ir.model.fields,field_description:sale_invoicing_plan.field_sale_invoicing_plan_line_product_id
+msgid "Product"
+msgstr "Prodotto"
+
+#. module: sale_invoicing_plan
+#: model:ir.model,name:sale_invoicing_plan.model_sale_advance_payment_inv
+msgid "Sales Advance Payment Invoice"
+msgstr "Anticipo su fattura di vendita"
+
+#. module: sale_invoicing_plan
+#: model:ir.model,name:sale_invoicing_plan.model_sale_order
+msgid "Sales Order"
+msgstr "Ordine di vendita"
+
+#. module: sale_invoicing_plan
+#: model:ir.model.fields,field_description:sale_invoicing_plan.field_sale_invoicing_plan_line_amount_type
+msgid "Type"
+msgstr "Tipo"
