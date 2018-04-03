@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record model="ir.ui.view" id="pspes_account_invoice_form_edits">
+        <field name="name">pspes.account.invoice.form.edits</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <field name="team_id" position="after">
+                <field name="officer_id"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

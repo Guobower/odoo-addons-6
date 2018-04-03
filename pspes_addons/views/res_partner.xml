@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record model="ir.ui.view" id="pspes_res_partner_edits">
+        <field name="name">pspes.res.partner.edits</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="category_id" position="after">
+                <field name="condominium"/>
+                <field name="officer"/>
+                <field name="legal_repr"/>
+                <field name="officer_id" attrs="{'invisible':[('condominium', '!=', True)]}"/>
+            </field>
+            <xpath expr="//page[@name='internal_notes']" position="before">
+                <page string="Condominio" attrs="{'invisible':[('condominium', '!=', True)]}">
+                    <group>
+                        <group string="Dati generali">
+                            <field name="n_apart"/>
+                            <field name="add_notes"/>
+                        </group>
+                    </group>
+                </page>
+                <page string="Condomini" attrs="{'invisible':[('officer', '!=', True)]}">
+                    <group string="Dati generali">
+                        <field name="condominium_ids"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
