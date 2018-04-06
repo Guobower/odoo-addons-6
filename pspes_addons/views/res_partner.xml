@@ -31,4 +31,17 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="pspes_res_partner_search_edits">
+        <field name="name">pspes.res.partner.search.edits</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <filter name="filter_my_partners" position="before">
+                <filter string="Administrator" name="type_admin" domain="[('officer','=',1)]"/>
+                <filter string="Condominium" name="type_building" domain="[('condominium','=',1)]"/>
+                <separator/>
+            </filter>
+        </field>
+    </record>
+
 </odoo>

@@ -10,9 +10,15 @@
     'depends': [
         'base',
         'sale',
+        'sale_timesheet',
+        'sales_team',
         'account',
         ],
     'data': [
+        'views/product_product.xml',
+        'views/installation.xml',
+        'views/ir_attachment.xml',
+        'views/project_task.xml',
         'views/res_partner.xml',
         'views/sale_order.xml',
         'views/account_invoice.xml',

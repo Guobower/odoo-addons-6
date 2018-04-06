@@ -2,15 +2,28 @@
 
 <odoo>
 
-    <record model="ir.ui.view" id="pspes_account_invoice_form_edits">
-        <field name="name">pspes.account.invoice.form.edits</field>
-        <field name="model">account.invoice</field>
-        <field name="inherit_id" ref="account.invoice_form"/>
+   <record model="ir.ui.view" id="pspes_sale_view_order_form_edits">
+        <field name="name">pspes.sale.view.order.form.edits</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
-            <field name="team_id" position="after">
-                <field name="officer_id"/>
+            <field name="payment_term_id" position="after">
+                <field name="officer_id" required="True"/>
+                <field name="installation_id" required="True"/>
             </field>
         </field>
     </record>
+
+   <record model="ir.ui.view" id="pspes_sale_order_form_sale_timesheet_edits">
+        <field name="name">pspes.sale.order.form.sale.timesheet.edits</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_timesheet.view_order_form_inherit_sale_timesheet"/>
+        <field name="arch" type="xml">
+            <button name="action_view_task" position="attributes">
+                <attribute name="attrs"></attribute>
+            </button>
+        </field>
+    </record>
+
 
 </odoo>

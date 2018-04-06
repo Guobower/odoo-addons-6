@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+<data>
+    <!-- Installations Group-->
+
+    <menuitem id='menu_installations_group'
+      name='Installations'
+      parent="sales_team.menu_base_partner"
+      sequence='11'/>
+
+      <!-- Financial Planning menu-->
+    <act_window id="action_installations"
+      name="Installations"
+      res_model="installation.main"
+      view_mode="tree,form"/>
+
+    <menuitem id='menu_installations'
+      string='Installations'
+      parent="menu_installations_group"
+      action="action_installations"
+      sequence='10'/>
+
+   <record model="ir.ui.view" id="pspes_installation_main_tree">
+        <field name="name">pspes.installation.main.tree</field>
+        <field name="model">installation.main</field>
+        <field name="arch" type="xml">
+            <tree editable="True">
+                <field name="name"/>
+                <field name="condominium_id"/>
+                <field name="officer_id" readonly="1"/>
+                <field name="inst_type"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+
+    </data>
+</odoo>

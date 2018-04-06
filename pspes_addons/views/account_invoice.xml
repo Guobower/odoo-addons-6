@@ -2,18 +2,12 @@
 
 <odoo>
 
-    <record model="ir.ui.view" id="pspes_sale_view_order_form_edits">
-        <field name="name">pspes.sale.view.order.form.edits</field>
-        <field name="model">sale.order</field>
-        <field name="inherit_id" ref="sale.view_order_form"/>
+    <record model="ir.ui.view" id="pspes_account_invoice_form_edits">
+        <field name="name">pspes.account.invoice.form.edits</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//button[@name='action_view_invoice']" position="before">
-               <field name="tasks_ids" invisible="1"/>
-               <button type="object" name="action_view_task" class="oe_stat_button" icon="fa-tasks" attrs="{'invisible': [('tasks_count', '=', 0)]}" groups="base.group_user">
-                   <field name="tasks_count" widget="statinfo" string="Tasks"/>
-               </button>
-            </xpath>
-            <field name="payment_term_id" position="after">
+            <field name="team_id" position="after">
                 <field name="officer_id"/>
             </field>
         </field>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+<data>
+
+   <record model="ir.ui.view" id="pspes_ir_attachment_tree">
+        <field name="name">pspes.ir.attachment.tree</field>
+        <field name="model">ir.attachment</field>
+        <field name="inherit_id" ref="base.view_attachment_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="/tree" position="replace">
+                <tree editable="True">
+                    <field name="name"/>
+                    <field name="task_id"/>
+                    <field name="officer_id"/>
+                    <field name="condominium_id"/>
+                    <field name="res_model"/>
+                    <field name="type"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="create_uid"/>
+                    <field name="create_date"/>
+                    <field name="datas"/>
+                </tree>
+            </xpath>
+        </field>
+    </record>
+
+
+</data>
+</odoo>
