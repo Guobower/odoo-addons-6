@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# © 2017 Giacomo Grasso - Agile Business Group
+# © 2017 Giacomo Grasso - giacomo.grasso.82@gmail.com
 # License GPL-3.0 or later (http://www.gnu.org/licenses/gpl.html).
 
-from openerp import models, fields, api
+from odoo import models, fields, api
 
 
 class ResPartner(models.Model):

@@ -28,10 +28,10 @@ Credits
 Contributors
 --------------
 
-* Giacomo Grasso <giacomo.grasso@agilebg.com>
+* Giacomo Grasso <giacomo.grasso.82@gmail.com>
 
 
 Maintainer
 -----------
 
-* Giacomo Grasso <giacomo.grasso@agilebg.com>
+* Giacomo Grasso <giacomo.grasso.82@gmail.com>
