@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <odoo>
+<data>
 
-   <record model="ir.ui.view" id="pspes_project_task_form_edits">
+   <record model="ir.ui.view" id="pspes_project_task_form_edits_2">
         <field name="name">pspes.project.task.form.edits</field>
         <field name="model">project.task</field>
         <field name="inherit_id" ref="project.view_task_form2"/>
@@ -11,23 +12,26 @@
                 <field name="officer_id" required="True"/>
                 <field name="installation_id" required="True"/>
             </field>
+
             <page name="description_page" position="after">
-                <field name="attachment_ids">
-                    <tree editable="True">
-                        <field name="name"/>
-                        <field name="task_id"/>
-                        <field name="officer_id"/>
-                        <field name="condominium_id"/>
-                        <field name="res_model"/>
-                        <field name="type"/>
-                        <field name="company_id" groups="base.group_multi_company"/>
-                        <field name="create_uid"/>
-                        <field name="create_date"/>
-                        <field name="datas"/>
-                    </tree>
-                </field>
+                <page name="attachment_page" string="Attachments">
+                    <field name="pspes_doc_ids"
+                           context="{'default_officer_id': officer_id,'default_installation_id': installation_id,}">
+                        <tree editable="True">
+                            <field name="name"/>
+                            <field name="pspes_task_id" invisible="1"/>
+                            <field name="officer_id" invisible="1"/>
+                            <field name="installation_id" invisible="1"/>
+                            <field name="deadline"/>
+                            <field name="create_date"/>
+                            <field name="datas"/>
+                            <field name="url" readonly="True"/>
+                        </tree>
+                    </field>
+                </page>
             </page>
         </field>
     </record>
 
+</data>
 </odoo>

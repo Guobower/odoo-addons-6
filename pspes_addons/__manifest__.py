@@ -9,6 +9,7 @@
     'license': 'AGPL-3',
     'depends': [
         'base',
+        'knowledge',
         'sale',
         'sale_timesheet',
         'sales_team',
@@ -20,6 +21,7 @@
         'views/ir_attachment.xml',
         'views/project_task.xml',
         'views/res_partner.xml',
+        'views/rsa_sheet.xml',
         'views/sale_order.xml',
         'views/account_invoice.xml',
     ],

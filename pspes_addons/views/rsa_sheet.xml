@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+<data>
+
+      <!-- Financial Planning menu-->
+    <act_window id="action_rsa_sheet"
+      name="RSA"
+      res_model="rsa.sheet"
+      view_mode="tree,form"/>
+
+    <menuitem id='menu_rsa_sheet'
+      string='RSA'
+      parent="menu_installations_group"
+      action="action_rsa_sheet"
+      sequence='20'/>
+
+   <record model="ir.ui.view" id="pspes_rsa_sheet_main_tree_2">
+        <field name="name">pspes.rsa.sheet.main.tree</field>
+        <field name="model">rsa.sheet</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="condominium_id"/>
+                <field name="officer_id" readonly="1"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="pspes_rsa_sheet_main_form">
+        <field name="name">pspes.rsa.sheet.main.form</field>
+        <field name="model">rsa.sheet</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet string="Rsa">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="date_exc"/>
+                            <field name="date_end"/>
+                            <field name="condominium_id"/>
+                        </group>
+                        <group>
+                            <field name="officer_id" readonly="1"/>
+                            <field name="description"/>
+                        </group>
+                    </group>
+                    <notebook>
+
+                        <page name="questions_01" string="Questions 01" >
+                        </page>
+                        <page name="questions_02" string="Questions 02" >
+                        </page>
+                        <page name="questions_03" string="Questions 03" >
+                        </page>
+
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    </data>
+</odoo>

@@ -16,7 +16,7 @@ class ProjectTask(models.Model):
         comodel_name="res.partner",
         domain=[('officer', "!=", False)])
 
-    pspes_doc_ids= fields.One2many(
+    pspes_doc_ids = fields.One2many(
         string="Documents",
-
-    )
+        comodel_name="ir.attachment",
+        inverse_name="pspes_task_id",)

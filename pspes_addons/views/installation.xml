@@ -2,6 +2,7 @@
 
 <odoo>
 <data>
+
     <!-- Installations Group-->
 
     <menuitem id='menu_installations_group'
@@ -9,7 +10,7 @@
       parent="sales_team.menu_base_partner"
       sequence='11'/>
 
-      <!-- Financial Planning menu-->
+  <!-- Istallation and documentation menu-->
     <act_window id="action_installations"
       name="Installations"
       res_model="installation.main"
@@ -19,7 +20,7 @@
       string='Installations'
       parent="menu_installations_group"
       action="action_installations"
-      sequence='10'/>
+      sequence='20'/>
 
    <record model="ir.ui.view" id="pspes_installation_main_tree">
         <field name="name">pspes.installation.main.tree</field>
@@ -33,8 +34,5 @@
                 <field name="description"/>
             </tree>
         </field>
-    </record>
-
-
-    </data>
+    </record></data>
 </odoo>
