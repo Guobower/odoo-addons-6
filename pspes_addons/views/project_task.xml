@@ -29,6 +29,9 @@
                         </tree>
                     </field>
                 </page>
+                <page string="RSA">
+                    <field name="rsa_ids"/>
+                </page>
             </page>
         </field>
     </record>

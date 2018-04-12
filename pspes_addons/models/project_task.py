@@ -20,3 +20,8 @@ class ProjectTask(models.Model):
         string="Documents",
         comodel_name="ir.attachment",
         inverse_name="pspes_task_id",)
+
+    rsa_ids = fields.One2many(
+        string="RSA",
+        comodel_name="rsa.sheet",
+        inverse_name="task_id",)
