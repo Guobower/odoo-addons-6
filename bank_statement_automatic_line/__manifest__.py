@@ -13,6 +13,7 @@
         'account'],
     'data': [
         'views/account_journal.xml',
+        'views/account_move.xml',
     ],
     'installable': True,
 }

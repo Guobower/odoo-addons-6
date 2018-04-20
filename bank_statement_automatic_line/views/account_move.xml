@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+<data>
+
+    <record id="tree_view_account_move_to_reconcile" model="ir.ui.view">
+        <field name="name">tree.view.account.move.to.reconcile</field>
+        <field name="model">account.move</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Bank moves to reconcile">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Financial Planning menu-->
+    <act_window id="action_account_move_to_reconcile"
+      name="Unreconciled bank moves"
+      res_model="account.move"
+      view_mode="tree"
+      domain="[('statement_line_id', '=', False),
+               ('journal_id.type', 'in', ['bank', 'cash']),]"
+      view_id='tree_view_account_move_to_reconcile'
+        />
+
+    <menuitem id='menu_account_move_to_reconcile'
+      string='Unreconciled bank moves'
+      parent="account.menu_finance_entries"
+      action="action_account_move_to_reconcile"
+      groups="account.group_account_manager"
+      sequence='100'/>
+
+</data>
+</odoo>
