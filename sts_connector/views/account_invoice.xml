@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+<data>
+
+    <record model="ir.ui.view" id="account_invoice_form_riba_twetwe">
+        <field name="name">account.invoice.form.riba_sads</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <field name="team_id" position="after">
+                <field name="create_dictionary"/>
+            </field>
+        </field>
+    </record>
+
+</data>
+</openerp>
