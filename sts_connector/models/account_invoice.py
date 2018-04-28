@@ -27,4 +27,6 @@ class AccountInvoice(models.Model):
             for k, v in dict.iteritems():
                 output += "chiave " + str(k) + " \n"
                 output += "valore " + str(v) + "\n"
-        invoice.create_dictionary = output
+            invoice.create_dictionary = output
+
+
