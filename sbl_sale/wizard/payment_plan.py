@@ -21,6 +21,33 @@ class PaymentPlanAnalysis(models.TransientModel):
 
     @api.multi
     def analysis_upload(self):
+        self.ensure_one()
+        ctx = dict(
+            self._context,
+            date_from=self.date_from,
+            date_to=self.date_to,
+            # search_default_group_by_product=True,
+            # search_default_group_by_location=True
+        )
+
+        action = self.env['ir.model.data'].xmlid_to_object('sbl_sale.action_sale_order_payments')
+        if not action:
+            action = {
+                'view_type': 'form',
+                'view_mode': 'tree,graph,pivot',
+                'res_model': 'sale.order.payment.plan',
+                'type': 'ir.actions.act_window',
+            }
+        else:
+            action = action[0].read()[0]
+
+        # action['domain'] = "[('date', '<=', '" + self.date + "')]"
+        action['name'] = _('SO Payments')
+        action['context'] = ctx
+        return action
+
+    @api.multi
+    def xx_analysis_upload(self):
         # Unlink in advance to be sure we'll only have 1 record to show
         self.env['sale.order.payment.plan.analysis.details'].search([]).unlink()
 

@@ -15,8 +15,12 @@
     'data': [
         'views/account.xml',
         'views/sale_order.xml',
-        'wizard/wizard_payment_plan.xml',
+
+        'report/so_payments_report.xml',
+
         'security/ir.model.access.csv',
+
+        'wizard/wizard_payment_plan.xml',
     ],
     'installable': True,
     'application': False,
