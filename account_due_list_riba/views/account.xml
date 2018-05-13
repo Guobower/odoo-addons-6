@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="account_move_line_riba_state">
+            <field name="name">account.move.line.riba.state</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account_due_list.view_payments_tree"/>
+            <field name="arch" type="xml">
+                <field name="payment_term_id" position="after">
+                    <field name="riba_line_state"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>
