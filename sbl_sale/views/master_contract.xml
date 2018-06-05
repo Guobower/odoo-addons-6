@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="sbl_master_contract_form_view_inherit" model="ir.ui.view">
+            <field name="name">sbl.master.contract.form.inherit</field>
+            <field name="model">sbl.master.contract</field>
+            <field name="inherit_id" ref="sbl_base.sbl_master_contract_form_view"/>
+            <field name="arch" type="xml">
+                <form string="Contract">
+                    <sheet>
+                        <notebook>
+                            <page string="Payment Plan" attrs="{'invisible':[('sale_order_id','=',False)]}">
+                                <field name="payment_plan_ids" nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="sequence" widget="handle"/>
+                                        <field name="date" attrs="{'readonly':[('reconciled','=',True)]}"/>
+                                        <field name="amount" widget="monetary" attrs="{'readonly':[('reconciled','=',True)]}"/>
+                                        <field name="residual" widget="monetary" attrs="{'readonly':[('reconciled','=',True)]}"/>
+                                        <field name="payment_term_id" attrs="{'readonly':[('reconciled','=',True)]}"/>
+                                        <field name="reconciled"/>
+                                        <field name="currency_id" invisible="1"/>
+                                    </tree>
+                                </field>
+                                <group class="oe_subtotal_footer oe_right" colspan="2">
+                                    <field name="payment_plan_amount_total" widget="monetary"/>
+                                    <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                            <label for="payment_plan_amount"/>
+                                    </div>
+                                    <field name="payment_plan_amount" nolabel="1" class="oe_subtotal_footer_separator" widget="monetary"/>
+                                    <field name="payment_plan_residual" widget="monetary"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>
