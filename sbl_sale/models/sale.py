@@ -1,7 +1,10 @@
 # coding=utf-8
 
+from datetime import datetime
+
 from odoo import models, fields, api, _
-from odoo.exceptions import ValidationError
+from odoo.exceptions import UserError
+from odoo import tools
 
 
 class SaleOrder(models.Model):
@@ -22,10 +25,32 @@ class SaleOrder(models.Model):
     @api.multi
     def write(self, vals):
         sale = super(SaleOrder, self).write(vals)
+
+        # in case of missing payment plan, we create one line
+        # which is always compulsory for reporting issue
+        if not self.payment_plan_ids and self.payment_plan_id:
+            self.compute_payment_deadlines()
+        elif not self.payment_plan_ids and not self.payment_plan_id:
+            date = datetime.strptime(self.date_order, tools.DEFAULT_SERVER_DATETIME_FORMAT).date()
+            self.update({'payment_plan_ids':
+                             [(0, 0, {
+                                 'date': date,
+                                 'date_real': date,
+                                 'amount': self.amount_total,
+                                 'residual': self.amount_total,
+                                 'payment_term_id': self.payment_term_id.id,
+                             })]
+                         })
+
+        # payment plan shall be recomputed
+        if any([i in ['payment_plan_ids', 'amount_untaxed'] for i in vals]):
+            self._compute_payment_plan_reconcile()
+
+        # payment plan shall be recomputed
         if self.payment_plan_ids:
             if (self.payment_plan_amount != self.amount_total and
                     self.env.context.get('payment_plan_validation', True)):
-                raise ValidationError(_('Payment plan amount {} differ from '
+                raise UserError(_('Payment plan amount {} differ from '
                                         'Sale Order total amount {}'.format(
                                             self.payment_plan_amount, self.amount_total)))
 
@@ -38,7 +63,8 @@ class SaleOrder(models.Model):
     @api.multi
     def compute_payment_deadlines(self):
         for order in self.with_context(uncheck=True):
-
+            if not order.payment_plan_id:
+                raise UserError(_("Please select a payment plan."))
             # remove existing payment terms
             terms_list = [(5, 0, {})]
 
@@ -49,6 +75,7 @@ class SaleOrder(models.Model):
             for term in due_list:
                 terms_list.append((0, 0, {
                     'date': term[0],
+                    'date_real': term[0],
                     'amount': term[1],
                     'residual': term[1],
                     'payment_term_id': order.payment_term_id.id,

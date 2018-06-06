@@ -25,6 +25,7 @@
                                 <tree editable="bottom">
                                     <field name="sequence" widget="handle"/>
                                     <field name="date" attrs="{'readonly':[('reconciled','=',True)]}"/>
+                                    <field name="date_real" attrs="{'readonly':[('reconciled','=',True)]}"/>
                                     <field name="amount" widget="monetary" attrs="{'readonly':[('reconciled','=',True)]}"/>
                                     <field name="residual" widget="monetary" attrs="{'readonly':[('reconciled','=',True)]}"/>
                                     <field name="payment_term_id" attrs="{'readonly':[('reconciled','=',True)]}"/>

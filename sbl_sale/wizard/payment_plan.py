@@ -32,16 +32,16 @@ class PaymentPlanAnalysis(models.TransientModel):
         for order in orders:
             for payment_plan in order.payment_plan_ids.filtered(lambda r: r.residual > 0.00):
 
-                if self.date_from and payment_plan.date < self.date_from:
+                if self.date_from and payment_plan.date_real < self.date_from:
                     date_due = self.date_from
-                elif self.date_to and payment_plan.date > self.date_to:
+                elif self.date_to and payment_plan.date_real > self.date_to:
                     date_due = self.date_to
                 else:
-                    date_due = payment_plan.date
+                    date_due = payment_plan.date_real
 
                 # if report is needed based on date intervals
                 date_from = datetime.strptime(self.date_from, tools.DEFAULT_SERVER_DATE_FORMAT)
-                date_due2 = datetime.strptime(payment_plan.date, tools.DEFAULT_SERVER_DATE_FORMAT)
+                date_due2 = datetime.strptime(payment_plan.date_real, tools.DEFAULT_SERVER_DATE_FORMAT)
                 days_diff = (date_due2 - date_from).days
                 days = int(days_diff / self.intervals) * self.intervals
 
@@ -56,7 +56,8 @@ class PaymentPlanAnalysis(models.TransientModel):
                     'confirmation_date': order.confirmation_date,
                     'payment_term_id': order.payment_term_id.id,
                     'status': order.state,
-                    'date_due': date_due,
+                    'date_due': payment_plan.date,
+                    'date_real': date_due,
                     'days': days,
                 }))
 
@@ -94,6 +95,7 @@ class PaymentPlanAnalysis(models.TransientModel):
                     'payment_term_id': invoice.payment_term_id.id,
                     'status': invoice.state,
                     'date_due': date_due,
+                    'date_real': date_due,
                     'days': days,
                 }))
 
