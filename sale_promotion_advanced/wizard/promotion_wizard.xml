@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="promotion_wizard_form" model="ir.ui.view">
+        <field name="name">promotion.wizard.form</field>
+        <field name="model">promotion.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Sale Promotion Wizard">
+                <h1>Promotion Management</h1>
+                <group>
+                    <group>
+                        <field name="promotion_id" readonly="1"/>
+                        <field name="order_id" readonly="1"/>
+                        <field name="main_discount"/>
+                    </group>
+                    <group>
+                        <field name="available" readonly="1"/>
+                    </group>
+                </group>
+                <notebook>
+                    <page string="Promoted Products">
+                        <field name="promo_line_ids">
+                            <tree editable="top">
+                                <field name="product_id"/>
+                                <field name="promoted"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Sale Order Products">
+                        <field name="apply_line_ids"
+                                readonly="1">
+                            <tree>
+                                <field name="product_id"/>
+                                <field name="required"/>
+                                <field name="available"/>
+                                <field name="so_line_ids" readonly="True"
+                                widge="many2many_tags"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+                <footer>
+                    <button string="Confirm" name="confirm_offer"
+                            type="object" class="btn-primary"
+                    attrs="{'invisible':[('available', '!=', True)]}"/>
+                    <button string="Cancel" class="btn-default" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

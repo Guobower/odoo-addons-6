@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="sale_promotion_case_view_tree" model="ir.ui.view">
+        <field name="name">sale.promotion.case.tree</field>
+        <field name="model">sale.promotion.case</field>
+        <field name="arch" type="xml">
+            <tree string="Sale promotion cases">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="promotion_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sale_promotion_rule_form_view_inherit" model="ir.ui.view">
+        <field name="name">sale.promotion.rule.form.inherit</field>
+        <field name="model">sale.promotion.rule</field>
+        <field name="inherit_id" ref="sale_promotion.sale_promotion_rule_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='promotion_rule_lines']/tree" position="attributes">
+                <attribute name="editable">True</attribute>
+            </xpath>
+            <field name="applied_on" position="after">
+                <field name="main_discount"/>
+            </field>
+            <xpath expr="/form/notebook/page" position="after">
+                <page string="Kit structure"
+                      attrs="{'invisible':[('applied_on', '!=', 'kit')],
+                      'required':[('applied_on', '=', 'kit')]}">
+                    <field name="kit_line_ids">
+                        <tree editable="true">
+                            <field name="product_id"/>
+                            <field name="qty_required"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <act_window id="action_sale_promotion_case"
+        name="Promotion cases"
+        res_model="sale.promotion.case"
+        view_mode="tree"/>
+
+    <menuitem id='menu_sale_promotion_case'
+        string='Promotion cases'
+        parent="sale_promotion.sale_promotion_menu"
+        action="action_sale_promotion_case"
+        sequence='10'/>
+
+</odoo>

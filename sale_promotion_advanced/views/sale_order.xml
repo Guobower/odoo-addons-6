@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="view_sale_promotion_order_form_layout" model="ir.ui.view">
+        <field name="name">sale.promotion.order.inherit.form.layout</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <field name="payment_term_id" position="after">
+                <field name="show_promo_details"/>
+            </field>
+            <xpath expr="//field[@name='order_line']/tree//field[@name='price_subtotal']"
+                   position="after">
+                <field name="show_promo_details" invisible="1"/>
+                <field name="promo_qty" attrs="{'invisible':[('show_promo_details', '!=', True)]}"/>
+                <field name="promotion_ids" attrs="{'invisible':[('show_promo_details', '!=', True)]}"
+                       readonly="1" widget="many2many_tags"/>
+            </xpath>
+            <xpath expr="/form/sheet/notebook/page" position="after">
+                <page string="Applied promotions">
+                    <field name="promotion_case_ids" options="{'no_create': True}">
+                        <tree>
+                            <field name="name"/>
+                            <field name="date"/>
+                            <field name="date_maturity"/>
+                            <field name="promotion_id"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

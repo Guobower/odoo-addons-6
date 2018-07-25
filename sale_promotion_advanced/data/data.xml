@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data noupdate="1">
+
+      <record id="promotion_case_sequence" model="ir.sequence">
+        <field name="name">Sequence for promotions</field>
+          <field name="code">promotion.case.sequence</field>
+          <field name="active">TRUE</field>
+          <field name="prefix">PROM/%(year)s/</field>
+          <field name="number_increment">1</field>
+          <field name="number_next_actual">001</field>
+          <field name="implementation">standard</field>
+      </record>
+
+    </data>
+</odoo>
